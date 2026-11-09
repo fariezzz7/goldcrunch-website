@@ -1,0 +1,75 @@
+/* Gold Crunch — Coming Soon / Under Development homepage
+   Brand palette taken from the banner: deep indigo-navy + gold. */
+
+:root {
+  --gc-navy-deep: #140e52;
+  --gc-navy: #1b1464;
+  --gc-navy-soft: #2a2088;
+  --gc-gold: #e7b84b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  background: radial-gradient(circle at 50% 18%, var(--gc-navy-soft) 0%, var(--gc-navy) 42%, var(--gc-navy-deep) 100%);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+}
+
+.stage {
+  width: 100%;
+  padding: clamp(12px, 3vw, 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  width: 100%;
+  max-width: 1280px;
+  border-radius: clamp(10px, 1.6vw, 20px);
+  overflow: hidden;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(231, 184, 75, 0.25);
+  animation: fade-rise 0.9s ease-out both;
+}
+
+.banner picture,
+.banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .banner {
+    animation: none;
+  }
+}
